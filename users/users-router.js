@@ -5,7 +5,7 @@ const authRequired = require("../middleware/auth-required");
 const Users = require("./users-model.js");
 
 // /api/users
-router.get("/", authRequired(), (req, res) => {
+router.get("/", authRequired, (req, res) => {
   Users.find()
     .then(users => {
       res.json(users);
